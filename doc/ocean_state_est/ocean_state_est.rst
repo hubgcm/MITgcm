@@ -58,45 +58,44 @@ section \ `3 <#sec:pkg:ctrl>`__.
   |                       |                       | correction            |
   +-----------------------+-----------------------+-----------------------+
 
-.. raw:: latex
+.. table:: Symbol used in formulating generic cost functions.
+  :name: gencost_symbols
 
-   \centering
-
-   +-----------------------------------+-----------------------------------+
-   | symbol                            | definition                        |
-   +===================================+===================================+
-   | :math:`\vec{u}`                   | vector of nondimensional control  |
-   |                                   | variables                         |
-   +-----------------------------------+-----------------------------------+
-   | :math:`\vec{v}`                   | vector of dimensional control     |
-   |                                   | variables                         |
-   +-----------------------------------+-----------------------------------+
-   | :math:`\alpha_i, \beta_j`         | misfit and control cost function  |
-   |                                   | multipliers (1 by default)        |
-   +-----------------------------------+-----------------------------------+
-   | :math:`R_i`                       | data error covariance matrix      |
-   |                                   | (:math:`R_i^{-1}` are weights)    |
-   +-----------------------------------+-----------------------------------+
-   | :math:`\vec{d}_i`                 | a set of model-data differences   |
-   +-----------------------------------+-----------------------------------+
-   | :math:`\vec{o}_i`                 | observational data vector         |
-   +-----------------------------------+-----------------------------------+
-   | :math:`\vec{m}_i`                 | model counterpart to              |
-   |                                   | :math:`\vec{o}_i`                 |
-   +-----------------------------------+-----------------------------------+
-   | :math:`\mathcal{P}`               | post-processing operator (e.g., a |
-   |                                   | smoother)                         |
-   +-----------------------------------+-----------------------------------+
-   | :math:`\mathcal{M}`               | forward model dynamics operator   |
-   +-----------------------------------+-----------------------------------+
-   | :math:`\mathcal{D}`               | diagnostic computation operator   |
-   +-----------------------------------+-----------------------------------+
-   | :math:`\mathcal{S}`               | averaging/subsampling operator    |
-   +-----------------------------------+-----------------------------------+
-   | :math:`\mathcal{Q}`               | Pre-processing operator           |
-   +-----------------------------------+-----------------------------------+
-   | :math:`\mathcal{R}`               | Pre-conditioning operator         |
-   +-----------------------------------+-----------------------------------+
+  +-----------------------------------+-----------------------------------+
+  | symbol                            | definition                        |
+  +===================================+===================================+
+  | :math:`\vec{u}`                   | vector of nondimensional control  |
+  |                                   | variables                         |
+  +-----------------------------------+-----------------------------------+
+  | :math:`\vec{v}`                   | vector of dimensional control     |
+  |                                   | variables                         |
+  +-----------------------------------+-----------------------------------+
+  | :math:`\alpha_i, \beta_j`         | misfit and control cost function  |
+  |                                   | multipliers (1 by default)        |
+  +-----------------------------------+-----------------------------------+
+  | :math:`R_i`                       | data error covariance matrix      |
+  |                                   | (:math:`R_i^{-1}` are weights)    |
+  +-----------------------------------+-----------------------------------+
+  | :math:`\vec{d}_i`                 | a set of model-data differences   |
+  +-----------------------------------+-----------------------------------+
+  | :math:`\vec{o}_i`                 | observational data vector         |
+  +-----------------------------------+-----------------------------------+
+  | :math:`\vec{m}_i`                 | model counterpart to              |
+  |                                   | :math:`\vec{o}_i`                 |
+  +-----------------------------------+-----------------------------------+
+  | :math:`\mathcal{P}`               | post-processing operator (e.g., a |
+  |                                   | smoother)                         |
+  +-----------------------------------+-----------------------------------+
+  | :math:`\mathcal{M}`               | forward model dynamics operator   |
+  +-----------------------------------+-----------------------------------+
+  | :math:`\mathcal{D}`               | diagnostic computation operator   |
+  +-----------------------------------+-----------------------------------+
+  | :math:`\mathcal{S}`               | averaging/subsampling operator    |
+  +-----------------------------------+-----------------------------------+
+  | :math:`\mathcal{Q}`               | Pre-processing operator           |
+  +-----------------------------------+-----------------------------------+
+  | :math:`\mathcal{R}`               | Pre-conditioning operator         |
+  +-----------------------------------+-----------------------------------+
 
 .. _costgen:
 
