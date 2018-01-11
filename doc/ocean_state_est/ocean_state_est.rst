@@ -1,8 +1,6 @@
 Ocean State Estimation Packages
 ===============================
 
-002
-
 This chapter describes packages that have been introduced for ocean
 state estimation purposes and in relation with automatic differentiation
 (see Chapter \ `[chap:autodiff] <#chap:autodiff>`__)
