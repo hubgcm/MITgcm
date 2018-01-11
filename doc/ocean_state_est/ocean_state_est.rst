@@ -86,6 +86,18 @@ section \ `3 <#sec:pkg:ctrl>`__.
   | :math:`\mathcal{R}`               | Pre-conditioning operator         |
   +-----------------------------------+-----------------------------------+
 
+.. FYI the above table was mis-handled by pandoc which had 
+.. (1) before the table:
+.. < .. raw:: latex
+.. <
+.. <    \centering
+.. <
+.. < .. table:: Symbol definitions for pkg/ecco and pkg/ctrl generic cost
+.. < functions.
+.. (2) the tables shifted by one blank which made it disappear
+.. (3) after the table:
+.. < [tbl:gencost_symbols]
+
 .. _costgen:
 
 Generic Cost Function
