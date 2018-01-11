@@ -9,6 +9,8 @@ state estimation purposes and in relation with automatic differentiation
 
 testing reference to other chapters; see :numref:`chap_modelExamples`
 
+testing reference to other chapters; see :numref:`chap_autodiff`
+
 .. _sec:pkg:ecco:
 
 ECCO: model-data comparisons using gridded data sets
