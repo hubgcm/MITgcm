@@ -264,12 +264,12 @@ compile time.
    |                       |                       | this value will be    |
    |                       |                       | omitted               |
    +-----------------------+-----------------------+-----------------------+
-   | ``gencost_startdate1` | integer               | Start date of         |
-   | `                     |                       | observations          |
+   | ``gencost_startdate1``| integer               | Start date of         |
+   |                       |                       | observations          |
    |                       |                       | (YYYMMDD)             |
    +-----------------------+-----------------------+-----------------------+
-   | ``gencost_startdate2` | integer               | Start date of         |
-   | `                     |                       | observations (HHMMSS) |
+   | ``gencost_startdate2``| integer               | Start date of         |
+   |                       |                       | observations (HHMMSS) |
    +-----------------------+-----------------------+-----------------------+
    | ``gencost_is3d``      | logical               | Needs to be true for  |
    |                       |                       | 3D fields             |
@@ -781,21 +781,21 @@ function.
    |                       |                       | (:math:`= 1` by       |
    |                       |                       | default)              |
    +-----------------------+-----------------------+-----------------------+
-   | ``xx_gentim2d_period` | real                  | Frequency of          |
-   | `                     |                       | adjustments (in       |
+   | ``xx_gentim2d_period``| real                  | Frequency of          |
+   |                       |                       | adjustments (in       |
    |                       |                       | seconds)              |
    +-----------------------+-----------------------+-----------------------+
-   | ``xx_gentim2d_startda | integer               | Adjustment start date |
-   | te1``                 |                       |                       |
+   |``xx_gentim2d_startda``| integer               | Adjustment start date |
+   |``te1``                |                       |                       |
    +-----------------------+-----------------------+-----------------------+
-   | ``xx_gentim2d_startda | integer               | Default: model start  |
-   | te2``                 |                       | date                  |
+   |``xx_gentim2d_startda``| integer               | Default: model start  |
+   |``te2``                |                       | date                  |
    +-----------------------+-----------------------+-----------------------+
-   | ``xx_gentim2d_cumsum` | logical               | Accumulate control    |
-   | `                     |                       | adjustments           |
+   | ``xx_gentim2d_cumsum``| logical               | Accumulate control    |
+   |                       |                       | adjustments           |
    +-----------------------+-----------------------+-----------------------+
-   | ``xx_gentim2d_glosum` | logical               | Global sum of         |
-   | `                     |                       | adjustment (output is |
+   | ``xx_gentim2d_glosum``| logical               | Global sum of         |
+   |                       |                       | adjustment (output is |
    |                       |                       | still 2D)             |
    +-----------------------+-----------------------+-----------------------+
 
