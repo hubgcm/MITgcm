@@ -30,7 +30,7 @@ generically as
    	\vec{v}	  &= \mathcal{Q}(\vec{u}), \label{eq:Upreproc} \\
    	\vec{u}	  &= \mathcal{R}(\vec{u}') \label{eq:Uprecond}\end{aligned}
 
-using symbols defined in :numref:`gencost_symbols`. Per
+using symbols defined in :numref:`tab_phys_pkg_kl10_runtime_copy`. Per
 Eq. \ `[eq:Jpreproc] <#eq:Jpreproc>`__ model counterparts
 (:math:`\vec{m}_i`) to observational data (:math:`\vec{o}_i`) derive
 from adjustable model parameters (:math:`\vec{v}`) through model
@@ -51,17 +51,8 @@ section \ `3 <#sec:pkg:ctrl>`__.
   :name: tab_phys_pkg_kl10_runtime_copy
 
   +----------------------+---------------------------------+----------------------------------------------+
-  | **Flag/parameter**   | **default**                     | **Description**                              |
+  | variable name        | description                     | remarks                                      |
   +======================+=================================+==============================================+
-  | KLviscMax            | 300 \ m\ :sup:`2` s\ :sup:`--1` | Maximum viscosity the scheme will ever give  |
-  |                      |                                 | (useful for stability)                       |
-  +----------------------+---------------------------------+----------------------------------------------+
-  | KLdumpFreq           | ``dumpFreq``                    | Dump frequency of KL10 field snapshots       |
-  +----------------------+---------------------------------+----------------------------------------------+
-  | KLtaveFreq           | ``taveFreq``                    | Averaging and dump frequency of KL10 fields  |
-  +----------------------+---------------------------------+----------------------------------------------+
-  | KLwriteState         | ``.FALSE.``                     | write KL10 state to file                     |
-  +----------------------+---------------------------------+----------------------------------------------+
   | ``m_eta``            | sea surface height              | free surface + ice +                         |
   |                      |                                 | global steric                                |
   |                      |                                 | correction                                   |
