@@ -22,14 +22,13 @@ after time-integration has completed. Following
 :raw-latex:`\cite{for-eta:15}` the total cost function is formulated
 generically as
 
-.. math::
-
-   \begin{aligned}
-   	\mathcal{J}(\vec{u}) &= \sum_i \alpha_i \left(\vec{d}_i^T R_i^{-1} \vec{d}_i\right) + \sum_j \beta_j \vec{u}^T\vec{u}, \label{eq:Jtotal} \\
-   	\vec{d}_i &= \mathcal{P}(\vec{m}_i - \vec{o}_i), \label{eq:Jposproc} \\
-   	\vec{m}_i &= \mathcal{S}\mathcal{D}\mathcal{M}(\vec{v}), \label{eq:Jpreproc} \\
-   	\vec{v}	  &= \mathcal{Q}(\vec{u}), \label{eq:Upreproc} \\
-   	\vec{u}	  &= \mathcal{R}(\vec{u}') \label{eq:Uprecond}\end{aligned}
+.. FYI the equations below were translated by pandoc as:
+.. \begin{aligned}
+.. 	\mathcal{J}(\vec{u}) &= \sum_i \alpha_i \left(\vec{d}_i^T R_i^{-1} \vec{d}_i\right) + \sum_j \beta_j \vec{u}^T\vec{u}, \label{eq:Jtotal} \\
+.. 	\vec{d}_i &= \mathcal{P}(\vec{m}_i - \vec{o}_i), \label{eq:Jposproc} \\
+.. 	\vec{m}_i &= \mathcal{S}\mathcal{D}\mathcal{M}(\vec{v}), \label{eq:Jpreproc} \\
+.. 	\vec{v}	  &= \mathcal{Q}(\vec{u}), \label{eq:Upreproc} \\
+.. 	\vec{u}	  &= \mathcal{R}(\vec{u}') \label{eq:Uprecond}\end{aligned}
 
 .. math::
    \mathcal{J}(\vec{u}) = \sum_i \alpha_i \left(\vec{d}_i^T R_i^{-1} \vec{d}_i\right) + \sum_j \beta_j \vec{u}^T\vec{u}
@@ -52,7 +51,7 @@ generically as
    :label: Uprecond
 
 using symbols defined in :numref:`gencost_symbols`. Per
-:eq:`Jpreproc` model counterparts
+Equation :eq:`Jpreproc` model counterparts
 (:math:`\vec{m}_i`) to observational data (:math:`\vec{o}_i`) derive
 from adjustable model parameters (:math:`\vec{v}`) through model
 dynamics integration (:math:`\mathcal{M}`), diagnostic calculations
