@@ -69,9 +69,6 @@ section \ `3 <#sec:pkg:ctrl>`__.
 
    \centering
 
-.. table:: Symbol used in formulating generic cost functions.
-  :name: gencost_symbols
-
    +-----------------------------------+-----------------------------------+
    | symbol                            | definition                        |
    +===================================+===================================+
