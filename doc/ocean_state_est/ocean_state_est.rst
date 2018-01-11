@@ -13,6 +13,10 @@ state estimation purposes and in relation with automatic differentiation
 ECCO: model-data comparisons using gridded data sets
 ----------------------------------------------------
 
+.. math::
+   \partial_x H \widehat{u} + \partial_y H \widehat{v} = 0
+   :label: rigid-lid-copy
+
 The functionalities implemented in ``pkg/ecco`` are: (1) output
 time-averaged model fields to compare with gridded data sets; (2)
 compute normalized model-data distances (i.e., cost functions); (3)
