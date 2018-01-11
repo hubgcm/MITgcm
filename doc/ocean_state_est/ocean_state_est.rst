@@ -1,6 +1,8 @@
 Ocean State Estimation Packages
 ===============================
 
+001
+
 This chapter describes packages that have been introduced for ocean
 state estimation purposes and in relation with automatic differentiation
 (see Chapter \ `[chap:autodiff] <#chap:autodiff>`__)
@@ -28,7 +30,7 @@ generically as
    	\vec{v}	  &= \mathcal{Q}(\vec{u}), \label{eq:Upreproc} \\
    	\vec{u}	  &= \mathcal{R}(\vec{u}') \label{eq:Uprecond}\end{aligned}
 
- using symbols defined in
+using symbols defined in
 table \ `[tbl:gencost_symbols] <#tbl:gencost_symbols>`__. Per
 Eq. \ `[eq:Jpreproc] <#eq:Jpreproc>`__ model counterparts
 (:math:`\vec{m}_i`) to observational data (:math:`\vec{o}_i`) derive
