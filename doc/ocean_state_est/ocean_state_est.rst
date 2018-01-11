@@ -31,6 +31,10 @@ generically as
    	\vec{v}	  &= \mathcal{Q}(\vec{u}), \label{eq:Upreproc} \\
    	\vec{u}	  &= \mathcal{R}(\vec{u}') \label{eq:Uprecond}\end{aligned}
 
+.. math::
+   \partial_x H \widehat{u} + \partial_y H \widehat{v} = 0
+   :label: Jpreproc
+
 using symbols defined in :numref:`gencost_symbols`. Per
 Eq. \ `[eq:Jpreproc] <#eq:Jpreproc>`__ model counterparts
 (:math:`\vec{m}_i`) to observational data (:math:`\vec{o}_i`) derive
