@@ -7,6 +7,24 @@ state estimation purposes and in relation with automatic differentiation
 .. FYI the corresponding tex was: (see Chapter~\ref{chap:autodiff})
 .. which pandoc has translated as: (see Chapter \ `[chap:autodiff] <#chap:autodiff>`__)
 
+
+.. table:: KL10 runtime parameters (copy).
+  :name: tab_phys_pkg_kl10_runtime_copy
+
+  +----------------------+---------------------------------+----------------------------------------------+
+  | **Flag/parameter**   | **default**                     | **Description**                              |
+  +======================+=================================+==============================================+
+  | KLviscMax            | 300 \ m\ :sup:`2` s\ :sup:`--1` | Maximum viscosity the scheme will ever give  |
+  |                      |                                 | (useful for stability)                       |
+  +----------------------+---------------------------------+----------------------------------------------+
+  | KLdumpFreq           | ``dumpFreq``                    | Dump frequency of KL10 field snapshots       |
+  +----------------------+---------------------------------+----------------------------------------------+
+  | KLtaveFreq           | ``taveFreq``                    | Averaging and dump frequency of KL10 fields  |
+  +----------------------+---------------------------------+----------------------------------------------+
+  | KLwriteState         | ``.FALSE.``                     | write KL10 state to file                     |
+  +----------------------+---------------------------------+----------------------------------------------+
+
+
 .. _sec:pkg:ecco:
 
 ECCO: model-data comparisons using gridded data sets
@@ -46,6 +64,10 @@ post-processor (Eq. `[eq:Jposproc] <#eq:Jposproc>`__).
 Eqs. \ `[eq:Upreproc] <#eq:Upreproc>`__-`[eq:Uprecond] <#eq:Uprecond>`__
 pertain to model control parameter adjustment capabilities described in
 section \ `3 <#sec:pkg:ctrl>`__.
+
+.. raw:: latex
+
+   \centering
 
 .. table:: Symbol used in formulating generic cost functions.
   :name: gencost_symbols
