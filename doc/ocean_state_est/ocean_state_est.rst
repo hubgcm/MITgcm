@@ -13,10 +13,6 @@ state estimation purposes and in relation with automatic differentiation
 ECCO: model-data comparisons using gridded data sets
 ----------------------------------------------------
 
-.. math::
-   \partial_x H \widehat{u} + \partial_y H \widehat{v} = 0
-   :label: rigid-lid-copy
-
 The functionalities implemented in ``pkg/ecco`` are: (1) output
 time-averaged model fields to compare with gridded data sets; (2)
 compute normalized model-data distances (i.e., cost functions); (3)
@@ -25,10 +21,6 @@ achieved as the model runs forwards in time whereas the others occur
 after time-integration has completed. Following
 :raw-latex:`\cite{for-eta:15}` the total cost function is formulated
 generically as
-
-.. math::
-   \partial_x H \widehat{u} + \partial_y H \widehat{v} = 0
-   :label: rigid-lid-continuity-copy
 
 .. math::
 
@@ -40,7 +32,7 @@ generically as
    	\vec{u}	  &= \mathcal{R}(\vec{u}') \label{eq:Uprecond}\end{aligned}
 
 .. math::
-   \partial_x H \widehat{u} + \partial_y H \widehat{v} = 0
+   \vec{m}_i = \mathcal{S}\mathcal{D}\mathcal{M}(\vec{v})
    :label: Jpreproc
 
 using symbols defined in :numref:`gencost_symbols`. Per
