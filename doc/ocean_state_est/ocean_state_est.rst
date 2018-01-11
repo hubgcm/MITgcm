@@ -7,6 +7,8 @@ state estimation purposes and in relation with automatic differentiation
 
 .. Corresponding tex was: (see Chapter~\ref{chap:autodiff})
 
+testing reference to other chapters; see :numref:`chap_modelExamples`
+
 .. _sec:pkg:ecco:
 
 ECCO: model-data comparisons using gridded data sets
