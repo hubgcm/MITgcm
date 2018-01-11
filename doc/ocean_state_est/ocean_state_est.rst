@@ -30,7 +30,7 @@ generically as
    	\vec{v}	  &= \mathcal{Q}(\vec{u}), \label{eq:Upreproc} \\
    	\vec{u}	  &= \mathcal{R}(\vec{u}') \label{eq:Uprecond}\end{aligned}
 
-using symbols defined in :numref:`tab_phys_pkg_kl10_runtime_copy`. Per
+using symbols defined in :numref:`gencost_symbols`. Per
 Eq. \ `[eq:Jpreproc] <#eq:Jpreproc>`__ model counterparts
 (:math:`\vec{m}_i`) to observational data (:math:`\vec{o}_i`) derive
 from adjustable model parameters (:math:`\vec{v}`) through model
@@ -46,17 +46,6 @@ post-processor (Eq. `[eq:Jposproc] <#eq:Jposproc>`__).
 Eqs. \ `[eq:Upreproc] <#eq:Upreproc>`__-`[eq:Uprecond] <#eq:Uprecond>`__
 pertain to model control parameter adjustment capabilities described in
 section \ `3 <#sec:pkg:ctrl>`__.
-
-.. table:: KL10 runtime parameters (copy).
-  :name: tab_phys_pkg_kl10_runtime_copy
-
-  +-----------------------+-----------------------+-----------------------+
-  | variable name         | description           | remarks               |
-  +=======================+=======================+=======================+
-  | ``m_eta``             | sea surface height    | free surface + ice +  |
-  |                       |                       | global steric         |
-  |                       |                       | correction            |
-  +-----------------------+-----------------------+-----------------------+
 
 .. table:: Symbol used in formulating generic cost functions.
   :name: gencost_symbols
