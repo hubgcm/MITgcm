@@ -23,6 +23,10 @@ after time-integration has completed. Following
 generically as
 
 .. math::
+   \partial_x H \widehat{u} + \partial_y H \widehat{v} = 0
+   :label: rigid-lid-continuity-copy
+
+.. math::
 
    \begin{aligned}
    	\mathcal{J}(\vec{u}) &= \sum_i \alpha_i \left(\vec{d}_i^T R_i^{-1} \vec{d}_i\right) + \sum_j \beta_j \vec{u}^T\vec{u}, \label{eq:Jtotal} \\
