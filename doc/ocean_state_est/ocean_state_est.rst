@@ -31,7 +31,6 @@ generically as
    	\vec{u}	  &= \mathcal{R}(\vec{u}') \label{eq:Uprecond}\end{aligned}
 
 using symbols defined in :numref:`gencost_symbols`. Per
-.. table \ `[tbl:gencost_symbols] <#tbl:gencost_symbols>`__. Per
 Eq. \ `[eq:Jpreproc] <#eq:Jpreproc>`__ model counterparts
 (:math:`\vec{m}_i`) to observational data (:math:`\vec{o}_i`) derive
 from adjustable model parameters (:math:`\vec{v}`) through model
@@ -52,8 +51,7 @@ section \ `3 <#sec:pkg:ctrl>`__.
 
    \centering
 
-.. table:: Symbol definitions for pkg/ecco and pkg/ctrl generic cost
-functions.
+.. table:: Symbol definitions for pkg/ecco and pkg/ctrl generic cost functions.
   :name: gencost_symbols
 
    +-----------------------------------+-----------------------------------+
