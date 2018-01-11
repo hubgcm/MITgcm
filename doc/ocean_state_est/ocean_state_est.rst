@@ -887,8 +887,8 @@ control is multiplied by the weight in the cost function itself.
    |                       | replication           |                       |
    +-----------------------+-----------------------+-----------------------+
    | ``replicate``         | Alias for ``docycle`` |     (units of         |
-   |                       |                       | ``xx_gentim2d_period` |
-   |                       |                       | `)                    |
+   |                       |                       | ``xx_gentim2d_period``|
+   |                       |                       |  )                    |
    +-----------------------+-----------------------+-----------------------+
    | ``rmcycle``           | Periodic average      | integer: cycle length |
    |                       | subtraction           |                       |
@@ -900,12 +900,12 @@ control is multiplied by the weight in the cost function itself.
    | `^{a}`                | ``xx_gen*_weight``    |                       |
    +-----------------------+-----------------------+-----------------------+
    | ``documul``           | Sets                  | —                     |
-   |                       | ``xx_gentim2d_cumsum` |                       |
-   |                       | `                     |                       |
+   |                       | ``xx_gentim2d_cumsum``|                       |
+   |                       |                       |                       |
    +-----------------------+-----------------------+-----------------------+
    | ``doglomean``         | Sets                  | —                     |
-   |                       | ``xx_gentim2d_glosum` |                       |
-   |                       | `                     |                       |
+   |                       | ``xx_gentim2d_glosum``|                       |
+   |                       |                       |                       |
    +-----------------------+-----------------------+-----------------------+
 
 [tbl:gencost_ctrl_preproc]
