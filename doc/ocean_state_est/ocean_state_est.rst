@@ -4,6 +4,7 @@ Ocean State Estimation Packages
 This chapter describes packages that have been introduced for ocean
 state estimation purposes and in relation with automatic differentiation
 (see :ref:`chap_autodiff`)
+
 .. FYI the corresponding tex was: (see Chapter~\ref{chap:autodiff})
 .. which pandoc has translated as: (see Chapter \ `[chap:autodiff] <#chap:autodiff>`__)
 
