@@ -4,12 +4,8 @@ Ocean State Estimation Packages
 This chapter describes packages that have been introduced for ocean
 state estimation purposes and in relation with automatic differentiation
 (see :ref:`chap_autodiff`)
-
-.. Corresponding tex was: (see Chapter~\ref{chap:autodiff})
-
-testing reference to other chapters; see :numref:`chap_modelExamples`
-
-testing reference to other chapters; see :numref:`chap_autodiff`
+.. FYI the corresponding tex was: (see Chapter~\ref{chap:autodiff})
+.. which pandoc has translated as: (see Chapter \ `[chap:autodiff] <#chap:autodiff>`__)
 
 .. _sec:pkg:ecco:
 
@@ -34,8 +30,8 @@ generically as
    	\vec{v}	  &= \mathcal{Q}(\vec{u}), \label{eq:Upreproc} \\
    	\vec{u}	  &= \mathcal{R}(\vec{u}') \label{eq:Uprecond}\end{aligned}
 
-using symbols defined in
-table \ `[tbl:gencost_symbols] <#tbl:gencost_symbols>`__. Per
+using symbols defined in :numref:`gencost_symbols`. Per
+.. table \ `[tbl:gencost_symbols] <#tbl:gencost_symbols>`__. Per
 Eq. \ `[eq:Jpreproc] <#eq:Jpreproc>`__ model counterparts
 (:math:`\vec{m}_i`) to observational data (:math:`\vec{o}_i`) derive
 from adjustable model parameters (:math:`\vec{v}`) through model
@@ -58,6 +54,7 @@ section \ `3 <#sec:pkg:ctrl>`__.
 
 .. table:: Symbol definitions for pkg/ecco and pkg/ctrl generic cost
 functions.
+  :name: gencost_symbols
 
    +-----------------------------------+-----------------------------------+
    | symbol                            | definition                        |
@@ -94,8 +91,6 @@ functions.
    +-----------------------------------+-----------------------------------+
    | :math:`\mathcal{R}`               | Pre-conditioning operator         |
    +-----------------------------------+-----------------------------------+
-
-[tbl:gencost_symbols]
 
 .. _costgen:
 
