@@ -214,7 +214,7 @@ compile time.
    |                       |                       | :math:`\vec{m}_i`     |
    |                       |                       | (see text)            |
    +-----------------------+-----------------------+-----------------------+
-   | ``gencost_outputlevel`` | integer               | Greater than 0 will   |
+   |``gencost_outputlevel``| integer               | Greater than 0 will   |
    |                       |                       | output misfit fields  |
    +-----------------------+-----------------------+-----------------------+
    | ``gencost_errfile``   | character(*)          | Uncertainty field     |
