@@ -32,8 +32,23 @@ generically as
    	\vec{u}	  &= \mathcal{R}(\vec{u}') \label{eq:Uprecond}\end{aligned}
 
 .. math::
+   \mathcal{J}(\vec{u}) &= \sum_i \alpha_i \left(\vec{d}_i^T R_i^{-1} \vec{d}_i\right) + \sum_j \beta_j \vec{u}^T\vec{u}, \label{eq:Jtotal} \\
+
+.. math::
+   \vec{d}_i = \mathcal{P}(\vec{m}_i - \vec{o}_i)
+   :label: Jposproc
+
+.. math::
    \vec{m}_i = \mathcal{S}\mathcal{D}\mathcal{M}(\vec{v})
    :label: Jpreproc
+
+.. math::
+   \vec{v}   = \mathcal{Q}(\vec{u})
+   :label: Upreproc
+
+.. math::
+   \vec{u}   = \mathcal{R}(\vec{u}')
+   :label: Uprecond
 
 using symbols defined in :numref:`gencost_symbols`. Per
 Eq. \ `[eq:Jpreproc] <#eq:Jpreproc>`__ model counterparts
