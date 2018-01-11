@@ -47,10 +47,6 @@ Eqs. \ `[eq:Upreproc] <#eq:Upreproc>`__-`[eq:Uprecond] <#eq:Uprecond>`__
 pertain to model control parameter adjustment capabilities described in
 section \ `3 <#sec:pkg:ctrl>`__.
 
-.. raw:: latex
-
-   \centering
-
 .. table:: Symbol used in formulating generic cost functions.
   :name: gencost_symbols
 
