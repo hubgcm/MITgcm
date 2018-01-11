@@ -51,7 +51,7 @@ section \ `3 <#sec:pkg:ctrl>`__.
 
    \centering
 
-.. table:: Symbol definitions for pkg/ecco and pkg/ctrl generic cost functions.
+.. table:: Symbol used in formulating generic cost functions.
   :name: gencost_symbols
 
    +-----------------------------------+-----------------------------------+
