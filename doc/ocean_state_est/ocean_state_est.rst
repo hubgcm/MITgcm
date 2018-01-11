@@ -1,7 +1,7 @@
 Ocean State Estimation Packages
 ===============================
 
-001
+002
 
 This chapter describes packages that have been introduced for ocean
 state estimation purposes and in relation with automatic differentiation
@@ -1032,13 +1032,13 @@ Description
      \tt
      xdiff(i,1) = xx(i-1) + tact(i-1,1)*dd(i-1)
 
-   serves as input for a forward and adjoint model run yielding a new
+  serves as input for a forward and adjoint model run yielding a new
   gg(i,1). In general, the new solution passes the 1st and 2nd Wolfe
   tests so xdiff(i,1) represents the solution sought:
 
   .. math:: {\tt xx(i) = xdiff(i,1)}
 
-   If one of the two tests fails, an inter- or extrapolation is invoked
+  If one of the two tests fails, an inter- or extrapolation is invoked
   to determine a new step size tact(i-1,2). If more than one function
   call is permitted, the new step size is used together with the "old"
   descent direction dd(i-1) (i.e. dd is not updated using the new
@@ -1046,7 +1046,7 @@ Description
 
   .. math:: {\tt xdiff(i,2) = xx(i-1) + tact(i-1,2)*dd(i-1)}
 
-   that serves as input in a new forward and adjoint run, yielding
+  that serves as input in a new forward and adjoint run, yielding
   gg(i,2). If now, both Wolfe tests are successful, the updated solution
   is given by
 
