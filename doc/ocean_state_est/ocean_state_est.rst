@@ -59,13 +59,12 @@ dynamics integration (:math:`\mathcal{M}`), diagnostic calculations
 (:math:`\mathcal{S}`). Alternatively :math:`\mathcal{S}` stands for
 subsampling in space and time (section `2 <#sec:pkg:profiles>`__). Plain
 model-data misfits (:math:`\vec{m}_i-\vec{o}_i`) can be penalized
-directly in Eq. \ `[eq:Jtotal] <#eq:Jtotal>`__ but penalized misfits
+directly in Eq. :eq:`Jtotal` but penalized misfits
 (:math:`\vec{d}_i`) more generally derive from
 :math:`\vec{m}_i-\vec{o}_i` through the generic :math:`\mathcal{P}`
-post-processor (Eq. `[eq:Jposproc] <#eq:Jposproc>`__).
-Eqs. \ `[eq:Upreproc] <#eq:Upreproc>`__-`[eq:Uprecond] <#eq:Uprecond>`__
+post-processor (Eq. :eq:`Jposproc`). Eqs. :eq:`Upreproc`-:eq:`Uprecond`
 pertain to model control parameter adjustment capabilities described in
-section \ `3 <#sec:pkg:ctrl>`__.
+section :ref:`sec:pkg:ctrl`.
 
 .. table:: Symbol used in formulating generic cost functions.
   :name: gencost_symbols
