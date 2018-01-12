@@ -382,10 +382,8 @@ YC.
   :name: gencost_ecco_preproc
 
   +-----------------------+-----------------------+-----------------------+
-  | name                  | description           | specs needed via      |
-  |                       |                       | ``gencost_preproc_i`` |
-  |                       |                       | ,                     |
-  |                       |                       | ``_r``, or ``_c``     |
+  | name                  | description           | ``gencost_preproc_i`` |
+  |                       |                       | , ``_r``, or ``_c``   |
   +=======================+=======================+=======================+
   | ``gencost_preproc``   |                       |                       |
   +-----------------------+-----------------------+-----------------------+
@@ -434,8 +432,7 @@ quadratic term in Eq. \ `[eq:Jtotal] <#eq:Jtotal>`__
 integral formula (Eq. `[eq:Jpreproc] <#eq:Jpreproc>`__). The
 specification of ``gencost_barfile`` again selects the physical variable
 type. Current valid options to use ``cost_gencost_boxmean.F`` are
-reported in
-table \ `[tbl:genint_ecco_barfile] <#tbl:genint_ecco_barfile>`__. A
+reported in :numref:`genint_ecco_barfile`. A
 suffix starting with ``‘_’`` can again be appended to
 ``gencost_barfile``.
 
@@ -459,27 +456,22 @@ computed accordingly. In case #2 (‘m_horflux\*’) the ‘W’, ‘S’, and �
 masks should consists of +1, -1, and 0 values and an integrated
 horizontal transport (or overturn) will be computed accordingly.
 
-.. raw:: latex
-
-   \centering
-
 .. table:: Implemented ``gencost_barfile`` options (as of checkpoint
-65z) that can be used via ``cost_gencost_boxmean.F``
-(section `1.2 <#intgen>`__).
+           65z) that can be used via ``cost_gencost_boxmean.F``
+           (section `1.2 <#intgen>`__).
+  :name: genint_ecco_barfile
 
-   +---------------------+----------------------------------+------------------+
-   | variable name       | description                      | remarks          |
-   +=====================+==================================+==================+
-   | ``m_boxmean_theta`` | mean of theta over box           | specify box      |
-   +---------------------+----------------------------------+------------------+
-   | ``m_boxmean_salt``  | mean of salt over box            | specify box      |
-   +---------------------+----------------------------------+------------------+
-   | ``m_boxmean_eta``   | mean of SSH over box             | specify box      |
-   +---------------------+----------------------------------+------------------+
-   | ``m_horflux_vol``   | volume transport through section | specify transect |
-   +---------------------+----------------------------------+------------------+
-
-[tbl:genint_ecco_barfile]
+  +---------------------+----------------------------------+------------------+
+  | variable name       | description                      | remarks          |
+  +=====================+==================================+==================+
+  | ``m_boxmean_theta`` | mean of theta over box           | specify box      |
+  +---------------------+----------------------------------+------------------+
+  | ``m_boxmean_salt``  | mean of salt over box            | specify box      |
+  +---------------------+----------------------------------+------------------+
+  | ``m_boxmean_eta``   | mean of SSH over box             | specify box      |
+  +---------------------+----------------------------------+------------------+
+  | ``m_horflux_vol``   | volume transport through section | specify transect |
+  +---------------------+----------------------------------+------------------+
 
 .. _v4custom:
 
@@ -496,68 +488,63 @@ section (non quadratic cost function). To this end one sets
 with ``‘_’``, and set ``gencost_barfile`` to one of ``m_trVol``,
 ``m_trHeat``, and ``m_trSalt``.
 
-.. raw:: latex
-
-   \centering
-
 .. table:: Pre-defined ``gencost_name`` special cases (as of checkpoint
-65z; section \ `1.3 <#v4custom>`__).
+           65z; section \ `1.3 <#v4custom>`__).
+  :name: gencost_ecco_name
 
-   +-----------------------+-----------------------+-----------------------+
-   | name                  | description           | remarks               |
-   +=======================+=======================+=======================+
-   | ``sshv4-mdt``         | sea surface height    | mean dynamic          |
-   |                       |                       | topography (SSH -     |
-   |                       |                       | geod)                 |
-   +-----------------------+-----------------------+-----------------------+
-   | ``sshv4-tp``          | sea surface height    | Along-Track           |
-   |                       |                       | Topex/Jason SLA       |
-   |                       |                       | (level 3)             |
-   +-----------------------+-----------------------+-----------------------+
-   | ``sshv4-ers``         | sea surface height    | Along-Track           |
-   |                       |                       | ERS/Envisat SLA       |
-   |                       |                       | (level 3)             |
-   +-----------------------+-----------------------+-----------------------+
-   | ``sshv4-gfo``         | sea surface height    | Along-Track GFO class |
-   |                       |                       | SLA (level 3)         |
-   +-----------------------+-----------------------+-----------------------+
-   | ``sshv4-lsc``         | sea surface height    | Large-Scale SLA (from |
-   |                       |                       | the above)            |
-   +-----------------------+-----------------------+-----------------------+
-   | ``sshv4-gmsl``        | sea surface height    | Global-Mean SLA (from |
-   |                       |                       | the above)            |
-   +-----------------------+-----------------------+-----------------------+
-   | ``bpv4-grace``        | bottom pressure       | GRACE maps (level 4)  |
-   +-----------------------+-----------------------+-----------------------+
-   | ``sstv4-amsre``       | sea surface           | Along-Swath SST       |
-   |                       | temperature           | (level 3)             |
-   +-----------------------+-----------------------+-----------------------+
-   | ``sstv4-amsre-lsc``   | sea surface           | Large-Scale SST (from |
-   |                       | temperature           | the above)            |
-   +-----------------------+-----------------------+-----------------------+
-   | ``si4-cons``          | sea ice concentration | needs sea-ice adjoint |
-   |                       |                       | (level 4)             |
-   +-----------------------+-----------------------+-----------------------+
-   | ``si4-deconc``        | model sea ice         | proxy penalty (from   |
-   |                       | deficiency            | the above)            |
-   +-----------------------+-----------------------+-----------------------+
-   | ``si4-exconc``        | model sea ice excess  | proxy penalty (from   |
-   |                       |                       | the above)            |
-   +-----------------------+-----------------------+-----------------------+
-   | ``transp_trVol``      | volume transport      | specify section as in |
-   |                       |                       | section \ `1.2 <#intg |
-   |                       |                       | en>`__                |
-   +-----------------------+-----------------------+-----------------------+
-   | ``transp_trHeat``     | heat transport        | specify section as in |
-   |                       |                       | section \ `1.2 <#intg |
-   |                       |                       | en>`__                |
-   +-----------------------+-----------------------+-----------------------+
-   | ``transp_trSalt``     | salt transport        | specify section as in |
-   |                       |                       | section \ `1.2 <#intg |
-   |                       |                       | en>`__                |
-   +-----------------------+-----------------------+-----------------------+
-
-[tbl:gencost_ecco_name]
+  +-----------------------+-----------------------+-----------------------+
+  | name                  | description           | remarks               |
+  +=======================+=======================+=======================+
+  | ``sshv4-mdt``         | sea surface height    | mean dynamic          |
+  |                       |                       | topography (SSH -     |
+  |                       |                       | geod)                 |
+  +-----------------------+-----------------------+-----------------------+
+  | ``sshv4-tp``          | sea surface height    | Along-Track           |
+  |                       |                       | Topex/Jason SLA       |
+  |                       |                       | (level 3)             |
+  +-----------------------+-----------------------+-----------------------+
+  | ``sshv4-ers``         | sea surface height    | Along-Track           |
+  |                       |                       | ERS/Envisat SLA       |
+  |                       |                       | (level 3)             |
+  +-----------------------+-----------------------+-----------------------+
+  | ``sshv4-gfo``         | sea surface height    | Along-Track GFO class |
+  |                       |                       | SLA (level 3)         |
+  +-----------------------+-----------------------+-----------------------+
+  | ``sshv4-lsc``         | sea surface height    | Large-Scale SLA (from |
+  |                       |                       | the above)            |
+  +-----------------------+-----------------------+-----------------------+
+  | ``sshv4-gmsl``        | sea surface height    | Global-Mean SLA (from |
+  |                       |                       | the above)            |
+  +-----------------------+-----------------------+-----------------------+
+  | ``bpv4-grace``        | bottom pressure       | GRACE maps (level 4)  |
+  +-----------------------+-----------------------+-----------------------+
+  | ``sstv4-amsre``       | sea surface           | Along-Swath SST       |
+  |                       | temperature           | (level 3)             |
+  +-----------------------+-----------------------+-----------------------+
+  | ``sstv4-amsre-lsc``   | sea surface           | Large-Scale SST (from |
+  |                       | temperature           | the above)            |
+  +-----------------------+-----------------------+-----------------------+
+  | ``si4-cons``          | sea ice concentration | needs sea-ice adjoint |
+  |                       |                       | (level 4)             |
+  +-----------------------+-----------------------+-----------------------+
+  | ``si4-deconc``        | model sea ice         | proxy penalty (from   |
+  |                       | deficiency            | the above)            |
+  +-----------------------+-----------------------+-----------------------+
+  | ``si4-exconc``        | model sea ice excess  | proxy penalty (from   |
+  |                       |                       | the above)            |
+  +-----------------------+-----------------------+-----------------------+
+  | ``transp_trVol``      | volume transport      | specify section as in |
+  |                       |                       | section \ `1.2 <#intg |
+  |                       |                       | en>`__                |
+  +-----------------------+-----------------------+-----------------------+
+  | ``transp_trHeat``     | heat transport        | specify section as in |
+  |                       |                       | section \ `1.2 <#intg |
+  |                       |                       | en>`__                |
+  +-----------------------+-----------------------+-----------------------+
+  | ``transp_trSalt``     | salt transport        | specify section as in |
+  |                       |                       | section \ `1.2 <#intg |
+  |                       |                       | en>`__                |
+  +-----------------------+-----------------------+-----------------------+
 
 Key Routines
 ~~~~~~~~~~~~
@@ -576,18 +563,10 @@ ALLOW_PSBAR_STERIC, ALLOW_SHALLOW_ALTIMETRY, ALLOW_HIGHLAT_ALTIMETRY,
 ECCO_CTRL_DEPRECATED, ... packages required for some functionalities:
 smooth, profiles, ctrl
 
-.. raw:: latex
-
-   \newpage
-
 .. _sec:pkg:profiles:
 
 PROFILES: model-data comparisons at observed locations
 ------------------------------------------------------
-
-.. raw:: latex
-
-   \bigskip
 
 The purpose of pkg/profiles is to allow sampling of MITgcm runs
 according to a chosen pathway (after a ship or a drifter, along
@@ -597,10 +576,6 @@ pkg/profiles will interpolate the model trajectory at the observed
 location. In particular, pkg/profiles can be used to do model-data
 comparison online and formulate a least-squares problem (ECCO
 application).
-
-.. raw:: latex
-
-   \bigskip
 
 | pkg/profiles is associated with three CPP keys:
 | (k1) ALLOW_PROFILES
@@ -612,10 +587,6 @@ application).
   least-squares application on (pkg/ecco needed). pkg/profiles requires
   needs pkg/cal and netcdf libraries.
 
-.. raw:: latex
-
-   \bigskip
-
 The namelist (data.profiles) is illustrated in table
 `[PkgProfNamelist] <#PkgProfNamelist>`__. This example includes two
 input netcdf files name (ARGOifremer_r8.nc and XBT_v5.nc are to be
@@ -625,26 +596,18 @@ variable number. By convention, the variable number is an integer
 ranging 1 to 6: temperature, salinity, zonal velocity, meridional
 velocity, sea surface height anomaly, and passive tracer.
 
-.. raw:: latex
-
-   \bigskip
-
-| The input file structure is illustrated in table
-  `[PkgProfInput] <#PkgProfInput>`__. To create such files, one can use
-  the netcdf_ecco_create.m matlab script, which can be checked out of
-| MITgcm_contrib/gael/profilesMatlabProcessing/
-| along with a full suite of matlab scripts associated with
-  pkg/profiles. At run time, each file is scanned to determine which
-  variables are included; these will be interpolated. The (final) output
-  file structure is similar but with interpolated model values in prof_T
-  etc., and it contains model mask variables (e.g. prof_Tmask). The very
-  model output consists of one binary (or netcdf) file per processor.
-  The final netcdf output is to be built from those using
-  netcdf_ecco_recompose.m (offline).
-
-.. raw:: latex
-
-   \bigskip
+The input file structure is illustrated in table
+`[PkgProfInput] <#PkgProfInput>`__. To create such files, one can use
+the netcdf_ecco_create.m matlab script, which can be checked out of
+MITgcm_contrib/gael/profilesMatlabProcessing/
+along with a full suite of matlab scripts associated with
+pkg/profiles. At run time, each file is scanned to determine which
+variables are included; these will be interpolated. The (final) output
+file structure is similar but with interpolated model values in prof_T
+etc., and it contains model mask variables (e.g. prof_Tmask). The very
+model output consists of one binary (or netcdf) file per processor.
+The final netcdf output is to be built from those using
+netcdf_ecco_recompose.m (offline).
 
 When the k2 option is used (e.g. for cubed sphere runs), the input file
 is to be completed with interpolation grid points and coefficients
@@ -654,10 +617,6 @@ that interpolation information is missing, the model will generate
 special grid files (profilesXCincl1PointOverlap\* etc.) and then stop.
 You then want to run netcdf_ecco_GenericgridMain.m using the special
 grid files. *This operation could eventually be inlined.*
-
-.. raw:: latex
-
-   \bigskip
 
 | #
 | # \*****************\*
@@ -707,10 +666,6 @@ grid files. *This operation could eventually be inlined.*
 | prof_Tweight:missing_value = -9999. ;
 | }
 
-.. raw:: latex
-
-   \newpage
-
 .. _sec:pkg:ctrl:
 
 CTRL: Model Parameter Adjustment Capability
@@ -724,189 +679,174 @@ The parameters available for configuring generic cost terms in
 ``data.ctrl`` are given in
 table \ `[tbl:gencost_ctrl_params] <#tbl:gencost_ctrl_params>`__.
 
-.. raw:: latex
-
-   \centering
-
 .. table:: Parameters in ``ctrl_nml_genarr`` namelist in ``data.ctrl``.
-The ``*`` can be replaced by ``arr2d``, ``arr3d``, or ``tim2d`` for
-time-invariant two and three dimensional controls and time-varying 2D
-controls, respectively. Parameters for ``genarr2d``, ``genarr3d``, and
-``gentime2d`` are arrays of length ``maxCtrlArr2D``, ``maxCtrlArr3D``,
-and ``maxCtrlTim2D``, respectively, with one entry per term in the cost
-function.
+           The ``*`` can be replaced by ``arr2d``, ``arr3d``, or ``tim2d`` for
+           time-invariant two and three dimensional controls and time-varying 2D
+           controls, respectively. Parameters for ``genarr2d``, ``genarr3d``, and
+           ``gentime2d`` are arrays of length ``maxCtrlArr2D``, ``maxCtrlArr3D``,
+           and ``maxCtrlTim2D``, respectively, with one entry per term in the cost
+           function.
+  :name: gencost_ctrl_params
 
-   +-----------------------+-----------------------+-----------------------+
-   | parameter             | type                  | function              |
-   +=======================+=======================+=======================+
-   | ``xx_gen*_file``      | character(*)          | Name of control.      |
-   |                       |                       | Prefix from           |
-   |                       |                       | table \ `[tbl:gencost |
-   |                       |                       | _ctrl_files] <#tbl:ge |
-   |                       |                       | ncost_ctrl_files>`__  |
-   |                       |                       | + suffix.             |
-   +-----------------------+-----------------------+-----------------------+
-   | ``xx_gen*_weight``    | character(*)          | Weights in the form   |
-   |                       |                       | of                    |
-   |                       |                       | :math:`\sigma_{\vec{u |
-   |                       |                       | }_j}^{-2}`            |
-   +-----------------------+-----------------------+-----------------------+
-   | ``xx_gen*_bounds``    | real(5)               | Apply bounds          |
-   +-----------------------+-----------------------+-----------------------+
-   | ``xx_gen*_preproc``   | character(*)          | Control               |
-   |                       |                       | preprocessor(s) (see  |
-   |                       |                       | table \ `[tbl:gencost |
-   |                       |                       | _ctrl_preproc] <#tbl: |
-   |                       |                       | gencost_ctrl_preproc> |
-   |                       |                       | `__)                  |
-   +-----------------------+-----------------------+-----------------------+
-   | ``xx_gen*_preproc_c`` | character(*)          | Preprocessor          |
-   |                       |                       | character arguments   |
-   +-----------------------+-----------------------+-----------------------+
-   | ``xx_gen*_preproc_i`` | integer(*)            | Preprocessor integer  |
-   |                       |                       | arguments             |
-   +-----------------------+-----------------------+-----------------------+
-   | ``xx_gen*_preproc_r`` | real(*)               | Preprocessor real     |
-   |                       |                       | arguments             |
-   +-----------------------+-----------------------+-----------------------+
-   | ``gen*Precond``       | real                  | Preconditioning       |
-   |                       |                       | factor (:math:`=1` by |
-   |                       |                       | default)              |
-   +-----------------------+-----------------------+-----------------------+
-   | ``mult_gen*``         | real                  | Cost function         |
-   |                       |                       | multiplier            |
-   |                       |                       | :math:`\beta_j`       |
-   |                       |                       | (:math:`= 1` by       |
-   |                       |                       | default)              |
-   +-----------------------+-----------------------+-----------------------+
-   | ``xx_gentim2d_period``| real                  | Frequency of          |
-   |                       |                       | adjustments (in       |
-   |                       |                       | seconds)              |
-   +-----------------------+-----------------------+-----------------------+
-   |``xx_gentim2d_startda``| integer               | Adjustment start date |
-   |``te1``                |                       |                       |
-   +-----------------------+-----------------------+-----------------------+
-   |``xx_gentim2d_startda``| integer               | Default: model start  |
-   |``te2``                |                       | date                  |
-   +-----------------------+-----------------------+-----------------------+
-   | ``xx_gentim2d_cumsum``| logical               | Accumulate control    |
-   |                       |                       | adjustments           |
-   +-----------------------+-----------------------+-----------------------+
-   | ``xx_gentim2d_glosum``| logical               | Global sum of         |
-   |                       |                       | adjustment (output is |
-   |                       |                       | still 2D)             |
-   +-----------------------+-----------------------+-----------------------+
-
-[tbl:gencost_ctrl_params]
-
-.. raw:: latex
-
-   \centering
+  +-----------------------+-----------------------+-----------------------+
+  | parameter             | type                  | function              |
+  +=======================+=======================+=======================+
+  | ``xx_gen*_file``      | character(*)          | Name of control.      |
+  |                       |                       | Prefix from           |
+  |                       |                       | table \ `[tbl:gencost |
+  |                       |                       | _ctrl_files] <#tbl:ge |
+  |                       |                       | ncost_ctrl_files>`__  |
+  |                       |                       | + suffix.             |
+  +-----------------------+-----------------------+-----------------------+
+  | ``xx_gen*_weight``    | character(*)          | Weights in the form   |
+  |                       |                       | of                    |
+  |                       |                       | :math:`\sigma_{\vec{u |
+  |                       |                       | }_j}^{-2}`            |
+  +-----------------------+-----------------------+-----------------------+
+  | ``xx_gen*_bounds``    | real(5)               | Apply bounds          |
+  +-----------------------+-----------------------+-----------------------+
+  | ``xx_gen*_preproc``   | character(*)          | Control               |
+  |                       |                       | preprocessor(s) (see  |
+  |                       |                       | table \ `[tbl:gencost |
+  |                       |                       | _ctrl_preproc] <#tbl: |
+  |                       |                       | gencost_ctrl_preproc> |
+  |                       |                       | `__)                  |
+  +-----------------------+-----------------------+-----------------------+
+  | ``xx_gen*_preproc_c`` | character(*)          | Preprocessor          |
+  |                       |                       | character arguments   |
+  +-----------------------+-----------------------+-----------------------+
+  | ``xx_gen*_preproc_i`` | integer(*)            | Preprocessor integer  |
+  |                       |                       | arguments             |
+  +-----------------------+-----------------------+-----------------------+
+  | ``xx_gen*_preproc_r`` | real(*)               | Preprocessor real     |
+  |                       |                       | arguments             |
+  +-----------------------+-----------------------+-----------------------+
+  | ``gen*Precond``       | real                  | Preconditioning       |
+  |                       |                       | factor (:math:`=1` by |
+  |                       |                       | default)              |
+  +-----------------------+-----------------------+-----------------------+
+  | ``mult_gen*``         | real                  | Cost function         |
+  |                       |                       | multiplier            |
+  |                       |                       | :math:`\beta_j`       |
+  |                       |                       | (:math:`= 1` by       |
+  |                       |                       | default)              |
+  +-----------------------+-----------------------+-----------------------+
+  | ``xx_gentim2d_period``| real                  | Frequency of          |
+  |                       |                       | adjustments (in       |
+  |                       |                       | seconds)              |
+  +-----------------------+-----------------------+-----------------------+
+  |``xx_gentim2d_startda``| integer               | Adjustment start date |
+  |``te1``                |                       |                       |
+  +-----------------------+-----------------------+-----------------------+
+  |``xx_gentim2d_startda``| integer               | Default: model start  |
+  |``te2``                |                       | date                  |
+  +-----------------------+-----------------------+-----------------------+
+  | ``xx_gentim2d_cumsum``| logical               | Accumulate control    |
+  |                       |                       | adjustments           |
+  +-----------------------+-----------------------+-----------------------+
+  | ``xx_gentim2d_glosum``| logical               | Global sum of         |
+  |                       |                       | adjustment (output is |
+  |                       |                       | still 2D)             |
+  +-----------------------+-----------------------+-----------------------+
 
 .. table:: Generic control prefixes implemented as of checkpoint 65z.
+  :name: gencost_ctrl_files
 
-   +-----------------------+-----------------------+-----------------------+
-   |                       | name                  | description           |
-   +=======================+=======================+=======================+
-   | 2D, time-invariant    | ``genarr2d``          |                       |
-   | controls              |                       |                       |
-   +-----------------------+-----------------------+-----------------------+
-   |                       | ``xx_etan``           | initial sea surface   |
-   |                       |                       | height                |
-   +-----------------------+-----------------------+-----------------------+
-   |                       | ``xx_bottomdrag``     | bottom drag           |
-   +-----------------------+-----------------------+-----------------------+
-   |                       | ``xx_geothermal``     | geothermal heat flux  |
-   +-----------------------+-----------------------+-----------------------+
-   | 3D, time-invariant    | ``genarr3d``          |                       |
-   | controls              |                       |                       |
-   +-----------------------+-----------------------+-----------------------+
-   |                       | ``xx_theta``          | initial potential     |
-   |                       |                       | temperature           |
-   +-----------------------+-----------------------+-----------------------+
-   |                       | ``xx_salt``           | initial salinity      |
-   +-----------------------+-----------------------+-----------------------+
-   |                       | ``xx_kapgm``          | GM coefficient        |
-   +-----------------------+-----------------------+-----------------------+
-   |                       | ``xx_kapredi``        | isopycnal diffusivity |
-   +-----------------------+-----------------------+-----------------------+
-   |                       | ``xx_diffkr``         | diapycnal diffusivity |
-   +-----------------------+-----------------------+-----------------------+
-   | 2D, time-varying      | ``gentim2D``          |                       |
-   | controls              |                       |                       |
-   +-----------------------+-----------------------+-----------------------+
-   |                       | ``xx_atemp``          | atmospheric           |
-   |                       |                       | temperature           |
-   +-----------------------+-----------------------+-----------------------+
-   |                       | ``xx_aqh``            | atmospheric specific  |
-   |                       |                       | humidity              |
-   +-----------------------+-----------------------+-----------------------+
-   |                       | ``xx_swdown``         | downward shortwave    |
-   +-----------------------+-----------------------+-----------------------+
-   |                       | ``xx_lwdown``         | downward longwave     |
-   +-----------------------+-----------------------+-----------------------+
-   |                       | ``xx_precip``         | precipitation         |
-   +-----------------------+-----------------------+-----------------------+
-   |                       | ``xx_uwind``          | zonal wind            |
-   +-----------------------+-----------------------+-----------------------+
-   |                       | ``xx_vwind``          | meridional wind       |
-   +-----------------------+-----------------------+-----------------------+
-   |                       | ``xx_tauu``           | zonal wind stress     |
-   +-----------------------+-----------------------+-----------------------+
-   |                       | ``xx_tauv``           | meridional wind       |
-   |                       |                       | stress                |
-   +-----------------------+-----------------------+-----------------------+
-   |                       | ``xx_gen_precip``     | globally averaged     |
-   |                       |                       | precipitation?        |
-   +-----------------------+-----------------------+-----------------------+
-
-[tbl:gencost_ctrl_files]
-
-.. raw:: latex
-
-   \centering
+  +-----------------------+-----------------------+-----------------------+
+  |                       | name                  | description           |
+  +=======================+=======================+=======================+
+  | 2D, time-invariant    | ``genarr2d``          |                       |
+  | controls              |                       |                       |
+  +-----------------------+-----------------------+-----------------------+
+  |                       | ``xx_etan``           | initial sea surface   |
+  |                       |                       | height                |
+  +-----------------------+-----------------------+-----------------------+
+  |                       | ``xx_bottomdrag``     | bottom drag           |
+  +-----------------------+-----------------------+-----------------------+
+  |                       | ``xx_geothermal``     | geothermal heat flux  |
+  +-----------------------+-----------------------+-----------------------+
+  | 3D, time-invariant    | ``genarr3d``          |                       |
+  | controls              |                       |                       |
+  +-----------------------+-----------------------+-----------------------+
+  |                       | ``xx_theta``          | initial potential     |
+  |                       |                       | temperature           |
+  +-----------------------+-----------------------+-----------------------+
+  |                       | ``xx_salt``           | initial salinity      |
+  +-----------------------+-----------------------+-----------------------+
+  |                       | ``xx_kapgm``          | GM coefficient        |
+  +-----------------------+-----------------------+-----------------------+
+  |                       | ``xx_kapredi``        | isopycnal diffusivity |
+  +-----------------------+-----------------------+-----------------------+
+  |                       | ``xx_diffkr``         | diapycnal diffusivity |
+  +-----------------------+-----------------------+-----------------------+
+  | 2D, time-varying      | ``gentim2D``          |                       |
+  | controls              |                       |                       |
+  +-----------------------+-----------------------+-----------------------+
+  |                       | ``xx_atemp``          | atmospheric           |
+  |                       |                       | temperature           |
+  +-----------------------+-----------------------+-----------------------+
+  |                       | ``xx_aqh``            | atmospheric specific  |
+  |                       |                       | humidity              |
+  +-----------------------+-----------------------+-----------------------+
+  |                       | ``xx_swdown``         | downward shortwave    |
+  +-----------------------+-----------------------+-----------------------+
+  |                       | ``xx_lwdown``         | downward longwave     |
+  +-----------------------+-----------------------+-----------------------+
+  |                       | ``xx_precip``         | precipitation         |
+  +-----------------------+-----------------------+-----------------------+
+  |                       | ``xx_uwind``          | zonal wind            |
+  +-----------------------+-----------------------+-----------------------+
+  |                       | ``xx_vwind``          | meridional wind       |
+  +-----------------------+-----------------------+-----------------------+
+  |                       | ``xx_tauu``           | zonal wind stress     |
+  +-----------------------+-----------------------+-----------------------+
+  |                       | ``xx_tauv``           | meridional wind       |
+  |                       |                       | stress                |
+  +-----------------------+-----------------------+-----------------------+
+  |                       | ``xx_gen_precip``     | globally averaged     |
+  |                       |                       | precipitation?        |
+  +-----------------------+-----------------------+-----------------------+
 
 .. table:: ``xx_gen????d_preproc`` options implemented as of checkpoint
-65z. Notes: :math:`^a`: If ``noscaling`` is false, the control
-adjustment is scaled by one on the square root of the weight before
-being added to the base control variable; if ``noscaling`` is true, the
-control is multiplied by the weight in the cost function itself.
+           65z. Notes: :math:`^a`: If ``noscaling`` is false, the control
+           adjustment is scaled by one on the square root of the weight before
+           being added to the base control variable; if ``noscaling`` is true, the
+           control is multiplied by the weight in the cost function itself.
+  :name: gencost_ctrl_preproc
 
-   +-----------------------+-----------------------+-----------------------+
-   | name                  | description           | arguments             |
-   +=======================+=======================+=======================+
-   | ``WC01``              | Correlation modeling  | integer: operator     |
-   |                       |                       | type (default: 1)     |
-   +-----------------------+-----------------------+-----------------------+
-   | ``smooth``            | Smoothing without     | integer: operator     |
-   |                       | normalization         | type (default: 1)     |
-   +-----------------------+-----------------------+-----------------------+
-   | ``docycle``           | Average period        | integer: cycle length |
-   |                       | replication           |                       |
-   +-----------------------+-----------------------+-----------------------+
-   | ``replicate``         | Alias for ``docycle`` |     (units of         |
-   |                       |                       | ``xx_gentim2d_period``|
-   |                       |                       |  )                    |
-   +-----------------------+-----------------------+-----------------------+
-   | ``rmcycle``           | Periodic average      | integer: cycle length |
-   |                       | subtraction           |                       |
-   +-----------------------+-----------------------+-----------------------+
-   | ``variaweight``       | Use time-varying      | —                     |
-   |                       | weight                |                       |
-   +-----------------------+-----------------------+-----------------------+
-   | ``noscaling``\ :math: | Do not scale with     | —                     |
-   | `^{a}`                | ``xx_gen*_weight``    |                       |
-   +-----------------------+-----------------------+-----------------------+
-   | ``documul``           | Sets                  | —                     |
-   |                       | ``xx_gentim2d_cumsum``|                       |
-   |                       |                       |                       |
-   +-----------------------+-----------------------+-----------------------+
-   | ``doglomean``         | Sets                  | —                     |
-   |                       | ``xx_gentim2d_glosum``|                       |
-   |                       |                       |                       |
-   +-----------------------+-----------------------+-----------------------+
-
-[tbl:gencost_ctrl_preproc]
+  +-----------------------+-----------------------+-----------------------+
+  | name                  | description           | arguments             |
+  +=======================+=======================+=======================+
+  | ``WC01``              | Correlation modeling  | integer: operator     |
+  |                       |                       | type (default: 1)     |
+  +-----------------------+-----------------------+-----------------------+
+  | ``smooth``            | Smoothing without     | integer: operator     |
+  |                       | normalization         | type (default: 1)     |
+  +-----------------------+-----------------------+-----------------------+
+  | ``docycle``           | Average period        | integer: cycle length |
+  |                       | replication           |                       |
+  +-----------------------+-----------------------+-----------------------+
+  | ``replicate``         | Alias for ``docycle`` |     (units of         |
+  |                       |                       | ``xx_gentim2d_period``|
+  |                       |                       |  )                    |
+  +-----------------------+-----------------------+-----------------------+
+  | ``rmcycle``           | Periodic average      | integer: cycle length |
+  |                       | subtraction           |                       |
+  +-----------------------+-----------------------+-----------------------+
+  | ``variaweight``       | Use time-varying      | —                     |
+  |                       | weight                |                       |
+  +-----------------------+-----------------------+-----------------------+
+  | ``noscaling``\ :math: | Do not scale with     | —                     |
+  | `^{a}`                | ``xx_gen*_weight``    |                       |
+  +-----------------------+-----------------------+-----------------------+
+  | ``documul``           | Sets                  | —                     |
+  |                       | ``xx_gentim2d_cumsum``|                       |
+  |                       |                       |                       |
+  +-----------------------+-----------------------+-----------------------+
+  | ``doglomean``         | Sets                  | —                     |
+  |                       | ``xx_gentim2d_glosum``|                       |
+  |                       |                       |                       |
+  +-----------------------+-----------------------+-----------------------+
 
 The control problem is non-dimensional by default, as reflected in the
 omission of weights in control penalties [(:math:`\vec{u}_j^T\vec{u}_j`
@@ -945,20 +885,12 @@ does not directly appear in the estimation problem, but only serves to
 push the optimization process in a certain direction in control space;
 this operator is specified by ``gen*Precond`` (:math:`=1` by default).
 
-.. raw:: latex
-
-   \newpage
-
 .. _sec:pkg:smooth:
 
 SMOOTH: Smoothing And Covariance Model
 --------------------------------------
 
 TBA ...
-
-.. raw:: latex
-
-   \newpage
 
 The line search optimisation algorithm [sectionoptim]
 -----------------------------------------------------
