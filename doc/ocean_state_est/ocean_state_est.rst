@@ -206,11 +206,10 @@ YC.
            and defined via `ecco_gencost_nml`` namelist in ``data.ecco``.
            All parameters are vectors of length ``NGENCOST`` (the # of 
            available cost terms) except for ``gencost_proc*`` are arrays
-           of size ``NGENPPROC``\ :math:`\times`\ ``NGENCOST``. In addition,
+           of size ``NGENPPROC``\ :math:`\times`\ ``NGENCOST`` (10 :math:`\times`\
+           20 by default; can be changed in ``ecco.h`` at compile time). In addition,
            the ``gencost_is3d`` internal parameter is reset to true on the 
            fly in all 3D cases in Table :numref:`gencost_ecco_barfile`.
-           NGENCOST (20) and NGENPPROC (10) can be changed in ``ecco.h`` 
-           only at compile time.
   :name: gencost_ecco_params
 
   +-----------------------+-----------------------+-----------------------+
@@ -307,137 +306,123 @@ YC.
   |                       |                       | m>`__)                |
   +-----------------------+-----------------------+-----------------------+
 
-.. raw:: latex
-
-   \centering
-
 .. table:: Implemented ``gencost_barfile`` options (as of checkpoint
-65z) that can be used via ``cost_generic.F``
-(section `1.1 <#costgen>`__). An extension starting with ‘\_’ can be
-appended at the end of the variable name to distinguish between separate
-cost function terms. Note: the ‘m_eta’ formula depends on the
-``ATMOSPHERIC_LOADING`` and ``ALLOW_PSBAR_STERIC`` compile time options
-and ‘useRealFreshWaterFlux’ run time parameter.
+           65z) that can be used via ``cost_generic.F``
+           (section `1.1 <#costgen>`__). An extension starting with ‘\_’ can be
+           appended at the end of the variable name to distinguish between separate
+           cost function terms. Note: the ‘m_eta’ formula depends on the
+           ``ATMOSPHERIC_LOADING`` and ``ALLOW_PSBAR_STERIC`` compile time options
+           and ‘useRealFreshWaterFlux’ run time parameter.
+  :name: gencost_ecco_barfile
 
-   +-----------------------+-----------------------+-----------------------+
-   | variable name         | description           | remarks               |
-   +=======================+=======================+=======================+
-   | ``m_eta``             | sea surface height    | free surface + ice +  |
-   |                       |                       | global steric         |
-   |                       |                       | correction            |
-   +-----------------------+-----------------------+-----------------------+
-   | ``m_sst``             | sea surface           | first level potential |
-   |                       | temperature           | temperature           |
-   +-----------------------+-----------------------+-----------------------+
-   | ``m_sss``             | sea surface salinity  | first level salinity  |
-   +-----------------------+-----------------------+-----------------------+
-   | ``m_bp``              | bottom pressure       | phiHydLow             |
-   +-----------------------+-----------------------+-----------------------+
-   | ``m_siarea``          | sea-ice area          | from pkg/seaice       |
-   +-----------------------+-----------------------+-----------------------+
-   | ``m_siheff``          | sea-ice effective     | from pkg/seaice       |
-   |                       | thickness             |                       |
-   +-----------------------+-----------------------+-----------------------+
-   | ``m_sihsnow``         | snow effective        | from pkg/seaice       |
-   |                       | thickness             |                       |
-   +-----------------------+-----------------------+-----------------------+
-   | ``m_theta``           | potential temperature | three-dimensional     |
-   +-----------------------+-----------------------+-----------------------+
-   | ``m_salt``            | salinity              | three-dimensional     |
-   +-----------------------+-----------------------+-----------------------+
-   | ``m_UE``              | zonal velocity        | three-dimensional     |
-   +-----------------------+-----------------------+-----------------------+
-   | ``m_VN``              | meridional velocity   | three-dimensional     |
-   +-----------------------+-----------------------+-----------------------+
-   | ``m_ustress``         | zonal wind stress     | from pkg/exf          |
-   +-----------------------+-----------------------+-----------------------+
-   | ``m_vstress``         | meridional wind       | from pkg/exf          |
-   |                       | stress                |                       |
-   +-----------------------+-----------------------+-----------------------+
-   | ``m_uwind``           | zonal wind            | from pkg/exf          |
-   +-----------------------+-----------------------+-----------------------+
-   | ``m_vwind``           | meridional wind       | from pkg/exf          |
-   +-----------------------+-----------------------+-----------------------+
-   | ``m_atemp``           | atmospheric           | from pkg/exf          |
-   |                       | temperature           |                       |
-   +-----------------------+-----------------------+-----------------------+
-   | ``m_aqh``             | atmospheric specific  | from pkg/exf          |
-   |                       | humidity              |                       |
-   +-----------------------+-----------------------+-----------------------+
-   | ``m_precip``          | precipitation         | from pkg/exf          |
-   +-----------------------+-----------------------+-----------------------+
-   | ``m_swdown``          | downward shortwave    | from pkg/exf          |
-   +-----------------------+-----------------------+-----------------------+
-   | ``m_lwdown``          | downward longwave     | from pkg/exf          |
-   +-----------------------+-----------------------+-----------------------+
-   | ``m_wspeed``          | wind speed            | from pkg/exf          |
-   +-----------------------+-----------------------+-----------------------+
-   | ``m_diffkr``          | vertical/diapycnal    | three-dimensional,    |
-   |                       | diffusivity           | constant              |
-   +-----------------------+-----------------------+-----------------------+
-   | ``m_kapgm``           | GM diffusivity        | three-dimensional,    |
-   |                       |                       | constant              |
-   +-----------------------+-----------------------+-----------------------+
-   | ``m_kapredi``         | isopycnal diffusivity | three-dimensional,    |
-   |                       |                       | constant              |
-   +-----------------------+-----------------------+-----------------------+
-   | ``m_geothermalflux``  | geothermal heat flux  | constant              |
-   +-----------------------+-----------------------+-----------------------+
-   | ``m_bottomdrag``      | bottom drag           | constant              |
-   +-----------------------+-----------------------+-----------------------+
-
-[tbl:gencost_ecco_barfile]
-
-.. raw:: latex
-
-   \centering
+  +-----------------------+-----------------------+-----------------------+
+  | variable name         | description           | remarks               |
+  +=======================+=======================+=======================+
+  | ``m_eta``             | sea surface height    | free surface + ice +  |
+  |                       |                       | global steric         |
+  |                       |                       | correction            |
+  +-----------------------+-----------------------+-----------------------+
+  | ``m_sst``             | sea surface           | first level potential |
+  |                       | temperature           | temperature           |
+  +-----------------------+-----------------------+-----------------------+
+  | ``m_sss``             | sea surface salinity  | first level salinity  |
+  +-----------------------+-----------------------+-----------------------+
+  | ``m_bp``              | bottom pressure       | phiHydLow             |
+  +-----------------------+-----------------------+-----------------------+
+  | ``m_siarea``          | sea-ice area          | from pkg/seaice       |
+  +-----------------------+-----------------------+-----------------------+
+  | ``m_siheff``          | sea-ice effective     | from pkg/seaice       |
+  |                       | thickness             |                       |
+  +-----------------------+-----------------------+-----------------------+
+  | ``m_sihsnow``         | snow effective        | from pkg/seaice       |
+  |                       | thickness             |                       |
+  +-----------------------+-----------------------+-----------------------+
+  | ``m_theta``           | potential temperature | three-dimensional     |
+  +-----------------------+-----------------------+-----------------------+
+  | ``m_salt``            | salinity              | three-dimensional     |
+  +-----------------------+-----------------------+-----------------------+
+  | ``m_UE``              | zonal velocity        | three-dimensional     |
+  +-----------------------+-----------------------+-----------------------+
+  | ``m_VN``              | meridional velocity   | three-dimensional     |
+  +-----------------------+-----------------------+-----------------------+
+  | ``m_ustress``         | zonal wind stress     | from pkg/exf          |
+  +-----------------------+-----------------------+-----------------------+
+  | ``m_vstress``         | meridional wind       | from pkg/exf          |
+  |                       | stress                |                       |
+  +-----------------------+-----------------------+-----------------------+
+  | ``m_uwind``           | zonal wind            | from pkg/exf          |
+  +-----------------------+-----------------------+-----------------------+
+  | ``m_vwind``           | meridional wind       | from pkg/exf          |
+  +-----------------------+-----------------------+-----------------------+
+  | ``m_atemp``           | atmospheric           | from pkg/exf          |
+  |                       | temperature           |                       |
+  +-----------------------+-----------------------+-----------------------+
+  | ``m_aqh``             | atmospheric specific  | from pkg/exf          |
+  |                       | humidity              |                       |
+  +-----------------------+-----------------------+-----------------------+
+  | ``m_precip``          | precipitation         | from pkg/exf          |
+  +-----------------------+-----------------------+-----------------------+
+  | ``m_swdown``          | downward shortwave    | from pkg/exf          |
+  +-----------------------+-----------------------+-----------------------+
+  | ``m_lwdown``          | downward longwave     | from pkg/exf          |
+  +-----------------------+-----------------------+-----------------------+
+  | ``m_wspeed``          | wind speed            | from pkg/exf          |
+  +-----------------------+-----------------------+-----------------------+
+  | ``m_diffkr``          | vertical/diapycnal    | three-dimensional,    |
+  |                       | diffusivity           | constant              |
+  +-----------------------+-----------------------+-----------------------+
+  | ``m_kapgm``           | GM diffusivity        | three-dimensional,    |
+  |                       |                       | constant              |
+  +-----------------------+-----------------------+-----------------------+
+  | ``m_kapredi``         | isopycnal diffusivity | three-dimensional,    |
+  |                       |                       | constant              |
+  +-----------------------+-----------------------+-----------------------+
+  | ``m_geothermalflux``  | geothermal heat flux  | constant              |
+  +-----------------------+-----------------------+-----------------------+
+  | ``m_bottomdrag``      | bottom drag           | constant              |
+  +-----------------------+-----------------------+-----------------------+
 
 .. table:: ``gencost_preproc`` and ``gencost_posproc`` options
-implemented as of checkpoint 65z. Note: the distinction between
-``gencost_preproc`` and ``gencost_posproc`` seems unclear and may be
-revisited in the future.
+           implemented as of checkpoint 65z. Note: the distinction between
+           ``gencost_preproc`` and ``gencost_posproc`` seems unclear and may be
+           revisited in the future.
+  :name: gencost_ecco_preproc
 
-   +-----------------------+-----------------------+-----------------------+
-   | name                  | description           | specs needed via      |
-   |                       |                       | ``gencost_preproc_i`` |
-   |                       |                       | ,                     |
-   |                       |                       | ``_r``, or ``_c``     |
-   +=======================+=======================+=======================+
-   | ``gencost_preproc``   |                       |                       |
-   +-----------------------+-----------------------+-----------------------+
-   | ``clim``              | Use climatological    | integer: no. of       |
-   |                       | misfits               | records per           |
-   |                       |                       | climatological cycle  |
-   +-----------------------+-----------------------+-----------------------+
-   | ``mean``              | Use time mean of      | —                     |
-   |                       | misfits               |                       |
-   +-----------------------+-----------------------+-----------------------+
-   | ``anom``              | Use anomalies from    | —                     |
-   |                       | time mean             |                       |
-   +-----------------------+-----------------------+-----------------------+
-   | ``variaweight``       | Use time-varying      | —                     |
-   |                       | weight :math:`W_i`    |                       |
-   +-----------------------+-----------------------+-----------------------+
-   | ``nosumsq``           | Use linear misfits    | —                     |
-   +-----------------------+-----------------------+-----------------------+
-   | ``factor``            | Multiply              | real: the scaling     |
-   |                       | :math:`\vec{m}_i` by  | factor                |
-   |                       | a scaling factor      |                       |
-   +-----------------------+-----------------------+-----------------------+
-   | ``gencost_posproc``   |                       |                       |
-   +-----------------------+-----------------------+-----------------------+
-   | ``smooth``            | Smooth misfits        | character: smoothing  |
-   |                       |                       | scale file            |
-   +-----------------------+-----------------------+-----------------------+
-   |                       |                       | integer: smoother #   |
-   |                       |                       | of time steps         |
-   +-----------------------+-----------------------+-----------------------+
-
-[tbl:gencost_ecco_preproc]
-
-.. raw:: latex
-
-   \clearpage
+  +-----------------------+-----------------------+-----------------------+
+  | name                  | description           | specs needed via      |
+  |                       |                       | ``gencost_preproc_i`` |
+  |                       |                       | ,                     |
+  |                       |                       | ``_r``, or ``_c``     |
+  +=======================+=======================+=======================+
+  | ``gencost_preproc``   |                       |                       |
+  +-----------------------+-----------------------+-----------------------+
+  | ``clim``              | Use climatological    | integer: no. of       |
+  |                       | misfits               | records per           |
+  |                       |                       | climatological cycle  |
+  +-----------------------+-----------------------+-----------------------+
+  | ``mean``              | Use time mean of      | —                     |
+  |                       | misfits               |                       |
+  +-----------------------+-----------------------+-----------------------+
+  | ``anom``              | Use anomalies from    | —                     |
+  |                       | time mean             |                       |
+  +-----------------------+-----------------------+-----------------------+
+  | ``variaweight``       | Use time-varying      | —                     |
+  |                       | weight :math:`W_i`    |                       |
+  +-----------------------+-----------------------+-----------------------+
+  | ``nosumsq``           | Use linear misfits    | —                     |
+  +-----------------------+-----------------------+-----------------------+
+  | ``factor``            | Multiply              | real: the scaling     |
+  |                       | :math:`\vec{m}_i` by  | factor                |
+  |                       | a scaling factor      |                       |
+  +-----------------------+-----------------------+-----------------------+
+  | ``gencost_posproc``   |                       |                       |
+  +-----------------------+-----------------------+-----------------------+
+  | ``smooth``            | Smooth misfits        | character: smoothing  |
+  |                       |                       | scale file            |
+  +-----------------------+-----------------------+-----------------------+
+  |                       |                       | integer: smoother #   |
+  |                       |                       | of time steps         |
+  +-----------------------+-----------------------+-----------------------+
 
 .. _intgen:
 
