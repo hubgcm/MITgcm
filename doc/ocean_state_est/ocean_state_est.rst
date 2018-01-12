@@ -137,9 +137,8 @@ The gridded observation file name is specified by ``gencost_datafile``.
 Observational time series may be provided as on big file or split into
 yearly files finishing in ‘\_1992’, ‘\_1993’, etc. The corresponding
 :math:`\vec{m}_i` physical variable is specified via the
-``gencost_barfile`` root (see
-table \ `[tbl:gencost_ecco_barfile] <#tbl:gencost_ecco_barfile>`__). A
-file named as specified by ``gencost_barfile`` gets created where
+``gencost_barfile`` root (see Table :numref:`gencost_ecco_barfile`).
+A file named as specified by ``gencost_barfile`` gets created where
 averaged fields are written progressively as the model steps forward in
 time. After the final time step this file is re-read by
 ``cost_generic.F`` to compute the corresponding cost function term. If
@@ -155,11 +154,11 @@ down to providing uncertainty fields (:math:`\sigma_i` such that
 default :math:`\sigma_i` is assumed to be time-invariant but a
 :math:`\sigma_i` time series of the same length as the :math:`\vec{o}_i`
 time series can be provided using the ``variaweight`` option
-(table `[tbl:gencost_ecco_preproc] <#tbl:gencost_ecco_preproc>`__). By
+(Table :numref:`gencost_ecco_preproc`). By
 default cost functions are quadratic but
 :math:`\vec{d}_i^T R_i^{-1} \vec{d}_i` can be replaced with
 :math:`R_i^{-1/2} \vec{d}_i` using the ``nosumsq`` option
-(table `[tbl:gencost_ecco_preproc] <#tbl:gencost_ecco_preproc>`__).
+(Table :numref:`gencost_ecco_preproc`).
 
 In principle, any averaging frequency should be possible, but only
 ‘day’, ‘month’, ‘step’, and ‘const’ are implemented for
@@ -180,10 +179,10 @@ or time steps) per climatological cycle. The generic post-processor
 allows model-data misfits to be, for example, smoothed in space by
 setting ``gencost_posproc`` to ‘smooth’ and specifying the smoother
 parameters via ``gencost_posproc_c`` and ``gencost_posproc_i`` (see
-table \ `[tbl:gencost_ecco_preproc] <#tbl:gencost_ecco_preproc>`__).
+Table :numref:`gencost_ecco_preproc`).
 Other options associated with the computation of
 Eq. \ `[eq:Jtotal] <#eq:Jtotal>`__ are summarized in
-table \ `[tbl:gencost_ecco_preproc] <#tbl:gencost_ecco_preproc>`__ and
+Table :numref:`gencost_ecco_preproc` and
 further discussed below. Multiple ``gencost_preproc`` /
 ``gencost_posproc`` options may be specified per cost term.
 
@@ -191,11 +190,10 @@ In general the specification of ``gencost_name`` is optional, has no
 impact on the end-result, and only serves to distinguish between cost
 function terms amongst the model output (STDOUT.0000, STDERR.0000,
 costfunction000, misfit*.data). Exceptions listed in
-table \ `[tbl:gencost_ecco_name] <#tbl:gencost_ecco_name>`__ however
+Table :numref:`gencost_ecco_name` however
 activate alternative cost function codes (in place of
 ``cost_generic.F``) described in section \ `1.3 <#v4custom>`__. In this
-section and in
-table \ `[tbl:gencost_ecco_barfile] <#tbl:gencost_ecco_barfile>`__
+section and in Table :numref:`gencost_ecco_barfile`
 (unlike in other parts of the manual) ‘zonal’ / ‘meridional’ are to be
 taken literally and these components are centered (i.e., not at the
 staggered model velocity points). Preparing gridded velocity data sets
