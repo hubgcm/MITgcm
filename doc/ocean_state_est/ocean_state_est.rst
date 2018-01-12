@@ -202,16 +202,15 @@ staggered model velocity points). Preparing gridded velocity data sets
 for use in cost functions thus boils down to interpolating them to XC /
 YC.
 
-All parameters are vectors of length ``NGENCOST`` (the # of available
-cost terms) except for ``gencost_proc*`` are arrays of size
-``NGENPPROC``\ :math:`\times`\ ``NGENCOST``. Notes: ``gencost_is3d`` is
-automatically reset to true in all 3D cases in
-table \ `[tbl:gencost_ecco_barfile] <#tbl:gencost_ecco_barfile>`__;
-NGENCOST (20) and NGENPPROC (10) can be changed in ecco.h only at
-compile time.
-
 .. table:: Run-time parameters used in formulating generic cost functions
            and defined via `ecco_gencost_nml`` namelist in ``data.ecco``.
+           All parameters are vectors of length ``NGENCOST`` (the # of 
+           available cost terms) except for ``gencost_proc*`` are arrays
+           of size ``NGENPPROC``\ :math:`\times`\ ``NGENCOST``. In addition,
+           the ``gencost_is3d`` internal parameter is reset to true on the 
+           fly in all 3D cases in Table :numref:`gencost_ecco_barfile`.
+           NGENCOST (20) and NGENPPROC (10) can be changed in ``ecco.h`` 
+           only at compile time.
   :name: gencost_ecco_params
 
   +-----------------------+-----------------------+-----------------------+
