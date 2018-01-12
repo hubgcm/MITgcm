@@ -676,8 +676,7 @@ CTRL: Model Parameter Adjustment Capability
    \def65z{65x}
 
 The parameters available for configuring generic cost terms in
-``data.ctrl`` are given in
-table \ `[tbl:gencost_ctrl_params] <#tbl:gencost_ctrl_params>`__.
+``data.ctrl`` are given in :numref:`gencost_ctrl_params`.
 
 .. table:: Parameters in ``ctrl_nml_genarr`` namelist in ``data.ctrl``.
            The ``*`` can be replaced by ``arr2d``, ``arr3d``, or ``tim2d`` for
@@ -688,66 +687,61 @@ table \ `[tbl:gencost_ctrl_params] <#tbl:gencost_ctrl_params>`__.
            function.
   :name: gencost_ctrl_params
 
-  +-----------------------+-----------------------+-----------------------+
-  | parameter             | type                  | function              |
-  +=======================+=======================+=======================+
-  | ``xx_gen*_file``      | character(*)          | Name of control.      |
-  |                       |                       | Prefix from           |
-  |                       |                       | table \ `[tbl:gencost |
-  |                       |                       | _ctrl_files] <#tbl:ge |
-  |                       |                       | ncost_ctrl_files>`__  |
-  |                       |                       | + suffix.             |
-  +-----------------------+-----------------------+-----------------------+
-  | ``xx_gen*_weight``    | character(*)          | Weights in the form   |
-  |                       |                       | of                    |
-  |                       |                       | :math:`\sigma_{\vec{u |
-  |                       |                       | }_j}^{-2}`            |
-  +-----------------------+-----------------------+-----------------------+
-  | ``xx_gen*_bounds``    | real(5)               | Apply bounds          |
-  +-----------------------+-----------------------+-----------------------+
-  | ``xx_gen*_preproc``   | character(*)          | Control               |
-  |                       |                       | preprocessor(s) (see  |
-  |                       |                       | table \ `[tbl:gencost |
-  |                       |                       | _ctrl_preproc] <#tbl: |
-  |                       |                       | gencost_ctrl_preproc> |
-  |                       |                       | `__)                  |
-  +-----------------------+-----------------------+-----------------------+
-  | ``xx_gen*_preproc_c`` | character(*)          | Preprocessor          |
-  |                       |                       | character arguments   |
-  +-----------------------+-----------------------+-----------------------+
-  | ``xx_gen*_preproc_i`` | integer(*)            | Preprocessor integer  |
-  |                       |                       | arguments             |
-  +-----------------------+-----------------------+-----------------------+
-  | ``xx_gen*_preproc_r`` | real(*)               | Preprocessor real     |
-  |                       |                       | arguments             |
-  +-----------------------+-----------------------+-----------------------+
-  | ``gen*Precond``       | real                  | Preconditioning       |
-  |                       |                       | factor (:math:`=1` by |
-  |                       |                       | default)              |
-  +-----------------------+-----------------------+-----------------------+
-  | ``mult_gen*``         | real                  | Cost function         |
-  |                       |                       | multiplier            |
-  |                       |                       | :math:`\beta_j`       |
-  |                       |                       | (:math:`= 1` by       |
-  |                       |                       | default)              |
-  +-----------------------+-----------------------+-----------------------+
-  | ``xx_gentim2d_period``| real                  | Frequency of          |
-  |                       |                       | adjustments (in       |
-  |                       |                       | seconds)              |
-  +-----------------------+-----------------------+-----------------------+
-  |``xx_gentim2d_startda``| integer               | Adjustment start date |
-  |``te1``                |                       |                       |
-  +-----------------------+-----------------------+-----------------------+
-  |``xx_gentim2d_startda``| integer               | Default: model start  |
-  |``te2``                |                       | date                  |
-  +-----------------------+-----------------------+-----------------------+
-  | ``xx_gentim2d_cumsum``| logical               | Accumulate control    |
-  |                       |                       | adjustments           |
-  +-----------------------+-----------------------+-----------------------+
-  | ``xx_gentim2d_glosum``| logical               | Global sum of         |
-  |                       |                       | adjustment (output is |
-  |                       |                       | still 2D)             |
-  +-----------------------+-----------------------+-----------------------+
+  +-----------------------+-----------------------+--------------------------------+
+  | parameter             | type                  | function                       |
+  +=======================+=======================+================================+
+  | ``xx_gen*_file``      | character(*)          | Control Name: prefix from      |
+  |                       |                       | :numref:`gencost_ctrl_files`   |
+  |                       |                       | + suffix.                      |
+  +-----------------------+-----------------------+--------------------------------+
+  | ``xx_gen*_weight``    | character(*)          | Weights in the form            |
+  |                       |                       | of                             |
+  |                       |                       | :math:`\sigma_{\vec{u          |
+  |                       |                       | }_j}^{-2}`                     |
+  +-----------------------+-----------------------+--------------------------------+
+  | ``xx_gen*_bounds``    | real(5)               | Apply bounds                   |
+  +-----------------------+-----------------------+--------------------------------+
+  | ``xx_gen*_preproc``   | character(*)          | Control                        |
+  |                       |                       | preprocessor(s) (see           |
+  |                       |                       | :numref:`gencost_ctrl_preproc` |
+  |                       |                       | )                              |
+  +-----------------------+-----------------------+--------------------------------+
+  | ``xx_gen*_preproc_c`` | character(*)          | Preprocessor                   |
+  |                       |                       | character arguments            |
+  +-----------------------+-----------------------+--------------------------------+
+  | ``xx_gen*_preproc_i`` | integer(*)            | Preprocessor integer           |
+  |                       |                       | arguments                      |
+  +-----------------------+-----------------------+--------------------------------+
+  | ``xx_gen*_preproc_r`` | real(*)               | Preprocessor real              |
+  |                       |                       | arguments                      |
+  +-----------------------+-----------------------+--------------------------------+
+  | ``gen*Precond``       | real                  | Preconditioning                |
+  |                       |                       | factor (:math:`=1` by          |
+  |                       |                       | default)                       |
+  +-----------------------+-----------------------+--------------------------------+
+  | ``mult_gen*``         | real                  | Cost function                  |
+  |                       |                       | multiplier                     |
+  |                       |                       | :math:`\beta_j`                |
+  |                       |                       | (:math:`= 1` by                |
+  |                       |                       | default)                       |
+  +-----------------------+-----------------------+--------------------------------+
+  | ``xx_gentim2d_period``| real                  | Frequency of                   |
+  |                       |                       | adjustments (in                |
+  |                       |                       | seconds)                       |
+  +-----------------------+-----------------------+--------------------------------+
+  |``xx_gentim2d_startda``| integer               | Adjustment start date          |
+  |``te1``                |                       |                                |
+  +-----------------------+-----------------------+--------------------------------+
+  |``xx_gentim2d_startda``| integer               | Default: model start           |
+  |``te2``                |                       | date                           |
+  +-----------------------+-----------------------+--------------------------------+
+  | ``xx_gentim2d_cumsum``| logical               | Accumulate control             |
+  |                       |                       | adjustments                    |
+  +-----------------------+-----------------------+--------------------------------+
+  | ``xx_gentim2d_glosum``| logical               | Global sum of                  |
+  |                       |                       | adjustment (output is          |
+  |                       |                       | still 2D)                      |
+  +-----------------------+-----------------------+--------------------------------+
 
 .. table:: Generic control prefixes implemented as of checkpoint 65z.
   :name: gencost_ctrl_files
