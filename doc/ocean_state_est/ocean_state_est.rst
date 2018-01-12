@@ -175,13 +175,13 @@ model averages in order to compare with climatologies of
 ``gencost_preproc`` and setting the corresponding ``gencost_preproc_i``
 integer parameter to the number of records (i.e., a # of months, days,
 or time steps) per climatological cycle. The generic post-processor
-(:math:`\mathcal{P}` in Eq. \ `[eq:Jposproc] <#eq:Jposproc>`__) also
+(:math:`\mathcal{P}` in Eq. :eq:`Jposproc`) also
 allows model-data misfits to be, for example, smoothed in space by
 setting ``gencost_posproc`` to ‘smooth’ and specifying the smoother
 parameters via ``gencost_posproc_c`` and ``gencost_posproc_i`` (see
 :numref:`gencost_ecco_preproc`).
 Other options associated with the computation of
-Eq. \ `[eq:Jtotal] <#eq:Jtotal>`__ are summarized in
+Eq. :eq:`Jtotal` are summarized in
 :numref:`gencost_ecco_preproc` and
 further discussed below. Multiple ``gencost_preproc`` /
 ``gencost_posproc`` options may be specified per cost term.
@@ -426,10 +426,10 @@ mechanistic understanding of a chosen physical variable via adjoint
 sensitivity computations (see
 Chapter \ `[chap:autodiff] <#chap:autodiff>`__) as done for example in
 :raw-latex:`\cite{maro-eta:99,heim-eta:11,fuku-etal:14}`. Thus the
-quadratic term in Eq. \ `[eq:Jtotal] <#eq:Jtotal>`__
+quadratic term in Eq. :eq:`Jtotal`
 (:math:`\vec{d}_i^T R_i^{-1} \vec{d}_i`) is by default replaced with a
 :math:`d_i` scalar [2]_ that derives from model fields through a generic
-integral formula (Eq. `[eq:Jpreproc] <#eq:Jpreproc>`__). The
+integral formula (Eq. :eq:`Jpreproc`). The
 specification of ``gencost_barfile`` again selects the physical variable
 type. Current valid options to use ``cost_gencost_boxmean.F`` are
 reported in :numref:`genint_ecco_barfile`. A
@@ -844,7 +844,7 @@ The parameters available for configuring generic cost terms in
 
 The control problem is non-dimensional by default, as reflected in the
 omission of weights in control penalties [(:math:`\vec{u}_j^T\vec{u}_j`
-in `[eq:Jtotal] <#eq:Jtotal>`__]. Non-dimensional controls
+in :eq:`Jtotal`]. Non-dimensional controls
 (:math:`\vec{u}_j`) are scaled to physical units (:math:`\vec{v}_j`)
 through multiplication by the respective uncertainty fields
 (:math:`\sigma_{\vec{u}_j}`), as part of the generic preprocessor
