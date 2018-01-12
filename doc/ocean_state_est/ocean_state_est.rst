@@ -423,8 +423,7 @@ Generic Integral Function
 The functionality described in this section is operated by
 ``cost_gencost_boxmean.F``. It is primarily aimed at obtaining a
 mechanistic understanding of a chosen physical variable via adjoint
-sensitivity computations (see
-Chapter \ `[chap:autodiff] <#chap:autodiff>`__) as done for example in
+sensitivity computations (see :ref:`chap_autodiff`) as done for example in
 :raw-latex:`\cite{maro-eta:99,heim-eta:11,fuku-etal:14}`. Thus the
 quadratic term in Eq. :eq:`Jtotal`
 (:math:`\vec{d}_i^T R_i^{-1} \vec{d}_i`) is by default replaced with a
@@ -848,7 +847,7 @@ in :eq:`Jtotal`]. Non-dimensional controls
 (:math:`\vec{u}_j`) are scaled to physical units (:math:`\vec{v}_j`)
 through multiplication by the respective uncertainty fields
 (:math:`\sigma_{\vec{u}_j}`), as part of the generic preprocessor
-:math:`\mathcal{Q}` in `[eq:Upreproc] <#eq:Upreproc>`__. Besides the
+:math:`\mathcal{Q}` in :eq:`Upreproc`. Besides the
 scaling of :math:`\vec{u}_j` to physical units, the preprocessor
 :math:`\mathcal{Q}` can include, for example, spatial correlation
 modeling (using an implementation of Weaver and Coutier, 2001) by
@@ -873,7 +872,7 @@ control parameter time series itself (approximately the run length
 divided by ``xx_gentim2d_period``).
 
 The parameter ``mult_gen*`` sets the multiplier for the corresponding
-cost function penalty [:math:`\beta_j` in `[eq:Jtotal] <#eq:Jtotal>`__;
+cost function penalty [:math:`\beta_j` in :eq:`Jtotal`;
 :math:`\beta_j = 1` by default). The preconditioner, :math:`\cal{R}`,
 does not directly appear in the estimation problem, but only serves to
 push the optimization process in a certain direction in control space;
